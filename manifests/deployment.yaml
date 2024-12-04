@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tan-dara2643-dara-react-deployment
+  labels:
+    app: tan-dara2643-dara-react
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tan-dara2643-dara-react
+  template:
+    metadata:
+      labels:
+        app: tan-dara2643-dara-react
+    spec:
+      containers:
+        - name: tan-dara2643-dara-react-container
+          image: pipejet/tan-dara2643-dara-react:0
+          ports:
+            - containerPort: 3000
